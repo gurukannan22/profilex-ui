@@ -11,6 +11,7 @@ import { Experience } from "@/components/sections/Experience";
 import { Education } from "@/components/sections/Education";
 import { Certifications } from "@/components/sections/Certifications";
 import { Volunteering } from "@/components/sections/Volunteering";
+import { Awards } from "@/components/sections/Awards";
 
 export default function Home() {
     return (
@@ -28,6 +29,7 @@ export default function Home() {
                 <Education />
                 <Certifications />
                 <Volunteering />
+                <Awards />
                 <Contact />
             </div>
 

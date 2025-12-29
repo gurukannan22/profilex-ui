@@ -92,9 +92,51 @@
     {
       "id": "hsc-2018",
       "degree": "HSC, Maths Biology",
-      "institution": "Sarswathi Knowledge Yuvakendra",
+      "institution": "SKY School",
       "year": "2017 - 2018",
       "logo": "https://drive.google.com/file/d/1yQodwIcT0n4PE85LseZ6-fQrm2Sffcv-/view?usp=drive_link"
+    }
+  ],
+  "awards": [
+    {
+      "id": "star-performer-q1-2024",
+      "title": "STAR Performer of the Quarter",
+      "issuer": "GAVS Technologies",
+      "date": "Nov 2024",
+      "associatedWith": "Neurealm",
+      "associatedWithLogo": "https://drive.google.com/file/d/1Zg5nfTv__sPs7SYIHiEEyw5NDEvrAbpN/view?usp=drive_link",
+      "description": "Awarded the STAR Performer of the Quarter for Q1 (April 2024 – June 2024) by GAVS Technologies in recognition of my unwavering dedication and outstanding contributions to the organization.",
+      "certificate": ""
+    },
+    {
+      "id": "abcd-edge-award-sep-2024",
+      "title": "ABCD Edge Award",
+      "issuer": "ABCD Aditya Birla Capital Digital",
+      "date": "Sep 2024",
+      "associatedWith": "Neurealm",
+      "associatedWithLogo": "https://drive.google.com/file/d/1Zg5nfTv__sPs7SYIHiEEyw5NDEvrAbpN/view?usp=drive_link",
+      "description": "Received the ABCD Edge Award from our esteemed client, Aditya Birla Capital, in recognition of my contributions to the UPI-Lite Auto-Top-up and Delegate Payments projects. This recognition highlights the strong collaboration between Aditya Birla Capital and GAVS Technologies in delivering innovative and impactful solutions.",
+      "certificate": ""
+    },
+    {
+      "id": "spot-recognition-aug-2024",
+      "title": "Spot Recognition Award",
+      "issuer": "GAVS Technologies",
+      "date": "Aug 2024",
+      "associatedWith": "Neurealm",
+      "associatedWithLogo": "https://drive.google.com/file/d/1Zg5nfTv__sPs7SYIHiEEyw5NDEvrAbpN/view?usp=drive_link",
+      "description": "Thrilled to receive the Spot Recognition Award for Going Above & Beyond in unveiling and deploying new features for the ABCD Aditya Birla Capital Digital App at Global Fintech Fest (#GFF2024) last August.",
+      "image": ""
+    },
+    {
+      "id": "spot-award-apr-2024",
+      "title": "Spot Award (Replica of ABCD App)",
+      "issuer": "ABCD Aditya Birla Capital Digital",
+      "date": "Apr 2024",
+      "associatedWith": "Neurealm",
+      "associatedWithLogo": "https://drive.google.com/file/d/1Zg5nfTv__sPs7SYIHiEEyw5NDEvrAbpN/view?usp=drive_link",
+      "description": "Received the replica for the successful launch of the ABCD Aditya Birla Capital Digital App on Play Store.",
+      "image": ""
     }
   ],
   "projects": [],

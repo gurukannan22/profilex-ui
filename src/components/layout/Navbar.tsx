@@ -13,8 +13,9 @@ const navItems = [
         children: [
             { name: '#experience', href: '#experience' },
             { name: '#education', href: '#education' },
-            { name: '#upskilling', href: '#upskilling' },
-            { name: '#giving-back', href: '#giving-back' },
+            { name: "Upskilling", href: "/#upskilling" },
+            { name: "Giving Back", href: "/#giving-back" },
+            { name: "Honors", href: "/#honors" },
         ]
     },
     { name: '#about-me', href: '#about-me' },
