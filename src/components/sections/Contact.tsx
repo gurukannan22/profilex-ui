@@ -22,11 +22,11 @@ export function Contact() {
                     <div className="flex flex-col gap-2">
                         <div className="flex items-center gap-2 text-gray-400">
                             <div className="w-5 h-5 bg-gray-600 rounded-full flex items-center justify-center text-xs text-white">!</div>
-                            <span>Guru#0922</span>
+                            <span>gurukannan0922</span>
                         </div>
                         <div className="flex items-center gap-2 text-gray-400">
                             <Mail className="w-5 h-5" />
-                            <span>gurukannan0922@gmail.com</span>
+                            <span>gurukannan2000@gmail.com</span>
                         </div>
                     </div>
                 </div>
