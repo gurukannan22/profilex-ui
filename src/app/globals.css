@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  --background: #282C33;
+  --foreground: #ABB2BF;
+  --primary: #C778DD;
+  --secondary: #98C379;
+  /* Green from the screenshot usually associated with strings/success in themes */
+  --accent: #61AFEF;
+  /* Blue often paired with this theme */
+  --border: #ABB2BF;
+
+  --font-mono: 'Fira Code', monospace;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+
+  --font-mono: var(--font-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-mono), monospace;
+  /* Defaulting to mono for the 'coder' vibe */
+}
+
+/* Utilities for the specific 'Elias' look */
+.text-primary {
+  color: var(--primary);
+}
+
+.border-primary {
+  border-color: var(--primary);
+}
