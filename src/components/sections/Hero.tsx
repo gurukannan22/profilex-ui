@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import profilePic from '@/assets/profile_char.png';
 
 export function Hero() {
     return (
@@ -30,7 +31,7 @@ export function Hero() {
                         {/* We will replace this with a real image later */}
                         <div className="w-80 h-96 relative border-b-2 border-primary">
                             <Image
-                                src="/profile_char.png"
+                                src={profilePic}
                                 alt="Guru Kannan"
                                 fill
                                 className="object-cover object-top"
