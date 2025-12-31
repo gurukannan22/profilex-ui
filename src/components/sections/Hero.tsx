@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function Hero() {
     return (
@@ -27,18 +28,24 @@ export function Hero() {
                     {/* Image Placeholder */}
                     <div className="relative z-10">
                         {/* We will replace this with a real image later */}
-                        <div className="w-80 h-96 bg-gray-800 flex items-center justify-center border-b-2 border-primary relative">
-                            <span className="text-gray-500">Hero Image</span>
+                        <div className="w-80 h-96 relative border-b-2 border-primary">
+                            <Image
+                                src="/profile_char.png"
+                                alt="Guru Kannan"
+                                fill
+                                className="object-cover object-top"
+                                priority
+                            />
 
                             {/* Dots decorative element */}
-                            <div className="absolute bottom-4 right-[-20px] grid grid-cols-5 gap-1">
+                            <div className="absolute bottom-4 right-[-20px] grid grid-cols-5 gap-1 z-20">
                                 {[...Array(25)].map((_, i) => (
                                     <div key={i} className="w-1 h-1 bg-gray-500 rounded-full"></div>
                                 ))}
                             </div>
 
                             {/* Logo outline decorative element */}
-                            <div className="absolute top-10 left-[-20px] text-gray-700">
+                            <div className="absolute top-10 left-[-20px] text-gray-700 z-20">
                                 <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M10 10 H 90 V 90 H 10 Z" stroke="currentColor" strokeWidth="2" fill="none" />
                                 </svg>
