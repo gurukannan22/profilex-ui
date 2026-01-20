@@ -27,14 +27,20 @@ export function AwardsClient({ awards }: AwardsClientProps) {
         show: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.2
+                staggerChildren: 0.15,
+                delayChildren: 0.2
             }
         }
     };
 
     const item = {
-        hidden: { opacity: 0, y: 50 },
-        show: { opacity: 1, y: 0 }
+        hidden: { opacity: 0, y: 30, scale: 0.95 },
+        show: {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            transition: { type: "spring" as const, bounce: 0.4, duration: 0.8 }
+        }
     };
 
     return (
@@ -42,7 +48,8 @@ export function AwardsClient({ awards }: AwardsClientProps) {
             <motion.h2
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5 }}
                 className="text-3xl font-medium mb-12 flex items-center"
             >
                 <span className="text-primary mr-2">#</span>honors-&-awards
@@ -53,15 +60,19 @@ export function AwardsClient({ awards }: AwardsClientProps) {
                 variants={container}
                 initial="hidden"
                 whileInView="show"
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, margin: "-50px" }}
                 className="grid gap-8 md:grid-cols-2"
             >
                 {awards.map((award) => (
                     <motion.div
                         key={award.id}
                         variants={item}
-                        whileHover={{ y: -5, scale: 1.01 }}
-                        className="border border-muted rounded-lg hover:border-primary transition-all duration-300 hover:shadow-lg bg-card/30 p-6 flex flex-col h-full group"
+                        whileHover={{
+                            y: -8,
+                            scale: 1.02,
+                            boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                        }}
+                        className="border border-muted rounded-lg hover:border-primary transition-colors duration-300 bg-card/30 p-6 flex flex-col h-full group"
                     >
                         <div className="flex justify-between items-start mb-4">
                             <div>

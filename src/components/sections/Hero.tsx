@@ -10,42 +10,71 @@ export function Hero() {
         <section id="home" className="pt-32 pb-16 min-h-screen flex items-center">
             <div className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row items-center justify-between">
                 <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5 }}
+                    initial="hidden"
+                    animate="visible"
+                    variants={{
+                        hidden: { opacity: 0, x: -50 },
+                        visible: {
+                            opacity: 1,
+                            x: 0,
+                            transition: {
+                                staggerChildren: 0.1,
+                                delayChildren: 0.1,
+                            }
+                        }
+                    }}
                     className="md:w-1/2 mb-12 md:mb-0"
                 >
-                    <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                    <motion.h1
+                        variants={{
+                            hidden: { opacity: 0, x: -20 },
+                            visible: { opacity: 1, x: 0 }
+                        }}
+                        className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
+                    >
                         Guru Kannan is a <span className="text-primary">Java Developer</span> and{' '}
                         <span className="text-primary">Tech Mentor</span>
-                    </h1>
-                    <p className="text-gray-400 mb-8 max-w-md">
-                        Building scalable backend systems and shaping tomorrow’s tech talent.
-                    </p>
-                    <Link
-                        href="#contacts"
-                        className="inline-block"
+                    </motion.h1>
+                    <motion.p
+                        variants={{
+                            hidden: { opacity: 0, x: -20 },
+                            visible: { opacity: 1, x: 0 }
+                        }}
+                        className="text-gray-400 mb-8 max-w-md"
                     >
-                        <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="border border-primary text-white px-6 py-2 hover:bg-primary/10 transition-colors relative overflow-hidden group"
+                        Building scalable backend systems and shaping tomorrow’s tech talent.
+                    </motion.p>
+                    <motion.div
+                        variants={{
+                            hidden: { opacity: 0, y: 20 },
+                            visible: { opacity: 1, y: 0 }
+                        }}
+                    >
+                        <Link
+                            href="#contacts"
+                            className="inline-block"
                         >
-                            <span className="relative z-10">Contact me!!</span>
-                            <motion.div
-                                className="absolute inset-0 bg-primary/20"
-                                initial={{ x: '-100%' }}
-                                whileHover={{ x: '100%' }}
-                                transition={{ duration: 0.5 }}
-                            />
-                        </motion.button>
-                    </Link>
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="border border-primary text-white px-6 py-2 hover:bg-primary/10 transition-colors relative overflow-hidden group rounded-sm"
+                            >
+                                <span className="relative z-10">Contact me!!</span>
+                                <motion.div
+                                    className="absolute inset-0 bg-primary/20"
+                                    initial={{ x: '-100%' }}
+                                    whileHover={{ x: '100%' }}
+                                    transition={{ duration: 0.5 }}
+                                />
+                            </motion.button>
+                        </Link>
+                    </motion.div>
                 </motion.div>
 
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
+                    transition={{ duration: 0.6, delay: 0.2, type: "spring" }}
                     className="md:w-1/2 relative flex justify-center"
                 >
                     {/* Abstract lines placeholder */}
@@ -55,7 +84,11 @@ export function Hero() {
                     <div className="absolute inset-0 bg-primary/5 blur-3xl rounded-full transform scale-110 -z-20"></div>
 
                     {/* Image Placeholder */}
-                    <div className="relative z-10">
+                    <motion.div
+                        className="relative z-10"
+                        animate={{ y: [0, -15, 0] }}
+                        transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                    >
                         {/* We will replace this with a real image later */}
                         <div className="w-80 h-96 relative border-b-2 border-primary">
                             <Image
@@ -93,7 +126,7 @@ export function Hero() {
                             <div className="w-3 h-3 bg-primary mr-2"></div>
                             <span className="text-gray-400 text-sm">Currently building at <span className="text-white font-bold">Ednue & TCS</span></span>
                         </div>
-                    </div>
+                    </motion.div>
                 </motion.div>
             </div>
         </section>
