@@ -15,11 +15,30 @@ export interface Award {
     image?: string;
 }
 
+import { useLanguage } from "@/context/LanguageContext";
+
+export interface Award {
+    id: string;
+    title: string;
+    issuer: string;
+    date: string;
+    associatedWith: string;
+    associatedWithLogo?: string;
+    description: string;
+    certificate?: string;
+    image?: string;
+}
+
 interface AwardsClientProps {
     awards: Award[];
 }
 
-export function AwardsClient({ awards }: AwardsClientProps) {
+export function AwardsClient({ awards: initialAwards }: AwardsClientProps) {
+    const { t } = useLanguage();
+    // Use awards from context which switches based on language
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const awards = (t.awards as any[]) || initialAwards;
+
     if (!awards || awards.length === 0) return null;
 
     const container = {
@@ -52,7 +71,7 @@ export function AwardsClient({ awards }: AwardsClientProps) {
                 transition={{ duration: 0.5 }}
                 className="text-3xl font-medium mb-12 flex items-center"
             >
-                <span className="text-primary mr-2">#</span>honors-&-awards
+                <span className="text-primary mr-2">#</span>{t.ui.awards.title}
                 <span className="h-px bg-primary w-32 md:w-64 ml-4"></span>
             </motion.h2>
 
@@ -93,7 +112,7 @@ export function AwardsClient({ awards }: AwardsClientProps) {
                                     />
                                 </div>
                             )}
-                            <span>Associated with {award.associatedWith}</span>
+                            <span>{t.ui.awards.associatedWith} {award.associatedWith}</span>
                         </div>
 
                         <p className="text-muted-foreground mb-6 flex-grow">{award.description}</p>
@@ -113,7 +132,7 @@ export function AwardsClient({ awards }: AwardsClientProps) {
                                         rel="noopener noreferrer"
                                         className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300"
                                     >
-                                        <span className="text-white font-medium border border-white px-3 py-1 rounded hover:bg-white/20 transition-colors">View Full Size</span>
+                                        <span className="text-white font-medium border border-white px-3 py-1 rounded hover:bg-white/20 transition-colors">{t.ui.awards.viewFullSize}</span>
                                     </a>
                                 </div>
                                 <p className="text-xs text-center mt-2 text-muted-foreground uppercase tracking-wider">

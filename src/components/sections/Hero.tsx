@@ -4,8 +4,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import profilePic from '@/assets/profile_char.png';
 import { motion } from "framer-motion";
+import { useLanguage } from '@/context/LanguageContext';
 
 export function Hero() {
+    const { t } = useLanguage();
+
     return (
         <section id="home" className="pt-32 pb-16 min-h-screen flex items-center">
             <div className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row items-center justify-between">
@@ -32,8 +35,8 @@ export function Hero() {
                         }}
                         className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
                     >
-                        Guru Kannan is a <span className="text-primary">Java Developer</span> and{' '}
-                        <span className="text-primary">Tech Mentor</span>
+                        {t.profile.name} {t.ui.hero.isA} <span className="text-primary">{t.profile.role}</span> {t.ui.hero.and}{' '}
+                        <span className="text-primary">{t.ui.hero.techMentor}</span>
                     </motion.h1>
                     <motion.p
                         variants={{
@@ -42,7 +45,7 @@ export function Hero() {
                         }}
                         className="text-gray-400 mb-8 max-w-md"
                     >
-                        Building scalable backend systems and shaping tomorrow’s tech talent.
+                        {t.ui.hero.description}
                     </motion.p>
                     <motion.div
                         variants={{
@@ -59,7 +62,7 @@ export function Hero() {
                                 whileTap={{ scale: 0.95 }}
                                 className="border border-primary text-white px-6 py-2 hover:bg-primary/10 transition-colors relative overflow-hidden group rounded-sm"
                             >
-                                <span className="relative z-10">Contact me!!</span>
+                                <span className="relative z-10">{t.ui.hero.contactBtn}</span>
                                 <motion.div
                                     className="absolute inset-0 bg-primary/20"
                                     initial={{ x: '-100%' }}
@@ -124,7 +127,7 @@ export function Hero() {
 
                         <div className="mt-2 flex items-center border border-gray-700 px-2 py-1 inline-block bg-background">
                             <div className="w-3 h-3 bg-primary mr-2"></div>
-                            <span className="text-gray-400 text-sm">Currently building at <span className="text-white font-bold">Ednue & TCS</span></span>
+                            <span className="text-gray-400 text-sm">{t.ui.hero.buildingAt} <span className="text-white font-bold">Ednue & TCS</span></span>
                         </div>
                     </motion.div>
                 </motion.div>
