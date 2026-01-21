@@ -33,6 +33,16 @@ const tamilData = {
             contactBtn: "தொடர்பு கொள்ள!!",
             buildingAt: "தற்போது கட்டமைப்பது"
         },
+        education: {
+            title: "கல்வி"
+        },
+        experience: {
+            title: "அனுபவம்"
+        },
+        projects: {
+            title: "திட்டங்கள்",
+            viewAll: "அனைத்தையும் பார்க்க"
+        },
         awards: {
             title: "விருதுகள் & அங்கீகாரங்கள்",
             associatedWith: "உடன் தொடர்புடையது",
@@ -73,6 +83,16 @@ const englishData = {
             description: "Building scalable backend systems and shaping tomorrow’s tech talent.",
             contactBtn: "Contact me!!",
             buildingAt: "Currently building at"
+        },
+        education: {
+            title: "education"
+        },
+        experience: {
+            title: "experience"
+        },
+        projects: {
+            title: "projects",
+            viewAll: "View all"
         },
         awards: {
             title: "honors-&-awards",
