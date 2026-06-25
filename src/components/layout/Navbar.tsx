@@ -26,8 +26,8 @@ const navItemsKeys = [
 ] as const;
 
 // Type guard or helper to safe check children
-const hasChildren = (item: any): item is { children: any[] } => {
-    return 'children' in item;
+const hasChildren = (item: unknown): item is { children: ReadonlyArray<{ href: string; nameKey: string }> } => {
+    return typeof item === 'object' && item !== null && 'children' in item;
 };
 
 export function Navbar() {
@@ -79,7 +79,7 @@ export function Navbar() {
                                     className="flex items-center gap-1 text-gray-400 hover:text-white transition-colors"
                                 >
                                     <span className="text-primary mr-0.5">#</span>
-                                    {getNavName(item.nameKey as any)}
+                                    {getNavName(item.nameKey as keyof typeof t.ui.nav)}
                                     <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${dropdownOpen && hoveredIndex === index ? 'rotate-180' : ''}`} />
                                 </button>
                             ) : (
@@ -88,7 +88,7 @@ export function Navbar() {
                                     className="text-gray-400 hover:text-white transition-colors"
                                 >
                                     <span className="text-primary mr-0.5">#</span>
-                                    {getNavName(item.nameKey as any).replace('#', '')}
+                                    {getNavName(item.nameKey as keyof typeof t.ui.nav).replace('#', '')}
                                 </Link>
                             )}
 
@@ -102,14 +102,14 @@ export function Navbar() {
                                         transition={{ duration: 0.2 }}
                                         className="absolute top-full left-0 w-48 bg-background/95 backdrop-blur-md border border-gray-800 rounded-md shadow-xl py-2 mt-2 origin-top-left overflow-hidden"
                                     >
-                                        {item.children.map((child: any) => (
+                                        {item.children.map((child) => (
                                             <Link
                                                 key={child.href}
                                                 href={child.href}
                                                 className="block px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-colors relative"
                                             >
                                                 <span className="text-primary mr-1">#</span>
-                                                {getNavName(child.nameKey as any).replace('#', '')}
+                                                {getNavName(child.nameKey as keyof typeof t.ui.nav).replace('#', '')}
                                             </Link>
                                         ))}
                                     </motion.div>
@@ -157,17 +157,17 @@ export function Navbar() {
                                         {hasChildren(item) ? (
                                             <>
                                                 <div className="text-xl font-bold py-2 text-gray-300">
-                                                    <span className="text-primary mr-1">#</span>{getNavName(item.nameKey as any)}
+                                                    <span className="text-primary mr-1">#</span>{getNavName(item.nameKey as keyof typeof t.ui.nav)}
                                                 </div>
                                                 <div className="pl-4 flex flex-col gap-3 border-l border-gray-800 ml-2 mt-1">
-                                                    {item.children.map((child: any) => (
+                                                    {item.children.map((child) => (
                                                         <Link
                                                             key={child.href}
                                                             href={child.href}
                                                             className="text-lg font-medium text-gray-400 hover:text-primary transition-colors"
                                                             onClick={() => setIsOpen(false)}
                                                         >
-                                                            {getNavName(child.nameKey as any).replace('#', '')}
+                                                            {getNavName(child.nameKey as keyof typeof t.ui.nav).replace('#', '')}
                                                         </Link>
                                                     ))}
                                                 </div>
@@ -179,7 +179,7 @@ export function Navbar() {
                                                 onClick={() => setIsOpen(false)}
                                             >
                                                 <span className="text-primary mr-1">#</span>
-                                                {getNavName(item.nameKey as any).replace('#', '')}
+                                                {getNavName(item.nameKey as keyof typeof t.ui.nav).replace('#', '')}
                                             </Link>
                                         )}
                                     </div>

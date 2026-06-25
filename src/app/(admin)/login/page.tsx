@@ -22,7 +22,7 @@ export default function LoginPage() {
             } else {
                 setError(result?.error || 'Login failed');
             }
-        } catch (e) {
+        } catch {
             setError('An error occurred');
         } finally {
             setIsLoading(false);

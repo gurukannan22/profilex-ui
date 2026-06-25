@@ -1,6 +1,5 @@
 'use client';
 
-import { useActionState } from 'react';
 import { updateTheme } from '@/actions/content';
 
 export function SettingsEditor({ initialTheme }: { initialTheme: string }) {

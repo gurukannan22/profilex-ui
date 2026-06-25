@@ -3,7 +3,7 @@
 import { useActionState } from 'react';
 import { updateProfile } from '@/actions/content';
 
-export function ProfileEditor({ initialData }: { initialData: any }) {
+export function ProfileEditor({ initialData }: { initialData: Record<string, string> }) {
     const [state, action, isPending] = useActionState(updateProfile, null);
 
     return (

@@ -14,7 +14,7 @@ export default async function AboutPage() {
             <div>
                 <h2 className="text-2xl font-semibold mb-6">Technical Skills</h2>
                 <div className="grid gap-6 md:grid-cols-3">
-                    {Object.entries(skills).map(([category, items]: [string, any]) => (
+                    {Object.entries(skills).map(([category, items]: [string, unknown]) => (
                         <div key={category} className="p-6 border rounded-lg bg-card text-card-foreground shadow-sm">
                             <h3 className="font-semibold mb-3 capitalize text-lg border-b pb-2">{category}</h3>
                             <div className="flex flex-wrap gap-2">

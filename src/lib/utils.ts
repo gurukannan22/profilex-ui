@@ -21,7 +21,7 @@ export const getDriveImageLink = (url: string) => {
 
     if (id) return `https://drive.google.com/thumbnail?id=${id}&sz=w1000`;
     return url;
-  } catch (e) {
+  } catch {
     return url;
   }
 };
